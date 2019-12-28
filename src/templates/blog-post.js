@@ -1,31 +1,31 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from "react"
+import { graphql } from "gatsby"
 
-import Layout from '../components/Layout'
-import SEO from '../components/seo'
-import RecommendedPosts from '../components/RecommendedPosts'
-import Comments from '../components/Comments'
+import Layout from "../components/Layout"
+import SEO from "../components/seo"
+import RecommendedPosts from "../components/RecommendedPosts"
+import Comments from "../components/Comments"
 
-import * as S from '../components/Post/styles'
+import * as S from "../components/Post/styles"
 
 const BlogPost = ({ data, pageContext }) => {
-  const post = data.markdownRemark 
+  const post = data.markdownRemark
   const next = pageContext.nextPost
   const previous = pageContext.previousPost
-  
+
   return (
     <Layout>
-      <SEO title={post.frontmatter.title}/>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        image={post.frontmatter.image}
+      />
       <S.PostHeader>
         <S.PostDate>
           {post.frontmatter.date} | {post.timeToRead} min de leitura
         </S.PostDate>
-        <S.PostTitle>
-          {post.frontmatter.title}
-        </S.PostTitle>
-        <S.PostDescription>
-          {post.frontmatter.description}
-        </S.PostDescription>
+        <S.PostTitle>{post.frontmatter.title}</S.PostTitle>
+        <S.PostDescription>{post.frontmatter.description}</S.PostDescription>
       </S.PostHeader>
       <S.MainContent>
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
@@ -38,7 +38,7 @@ const BlogPost = ({ data, pageContext }) => {
 
 export const query = graphql`
   query Post($slug: String!) {
-    markdownRemark(fields: {slug: {eq: $slug }}) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       fields {
         slug
       }
@@ -46,6 +46,7 @@ export const query = graphql`
         title
         description
         date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+        image
       }
       html
       timeToRead
