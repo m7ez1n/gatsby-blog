@@ -1,14 +1,15 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
-import Avatar from '../Avatar';
+import Avatar from "../Avatar"
+import getThemeColor from "../../utils/getThemeColor"
 
-import * as S from './styles';
+import * as S from "./styles"
 
 const Profile = () => {
   const {
-    site: { 
-      siteMetadata: { title, position, description }
+    site: {
+      siteMetadata: { title, position, description },
     },
   } = useStaticQuery(graphql`
     query MySiteMetadata {
@@ -24,16 +25,22 @@ const Profile = () => {
 
   return (
     <S.ProfileWrapper>
-      <S.ProfileLink>
+      <S.ProfileLink
+        to="/"
+        cover
+        direction="left"
+        bg={getThemeColor()}
+        duration={0.6}
+      >
         <Avatar />
         <S.ProfileAuthor>
           {title}
           <S.ProfilePosition>{position}</S.ProfilePosition>
-        </S.ProfileAuthor>  
+        </S.ProfileAuthor>
       </S.ProfileLink>
       <S.ProfileDescription>{description}</S.ProfileDescription>
     </S.ProfileWrapper>
-  ) 
+  )
 }
 
-export default Profile;
+export default Profile

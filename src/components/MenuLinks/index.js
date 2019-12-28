@@ -12,9 +12,9 @@ const MenuLinks = () => (
         <S.MenuLinksItem key={i}>
           <S.MenuLinksLink
             cover
-            direction="left"
+            direction="right"
             bg={getThemeColor()}
-            duration={0.6}
+            duration={0.5}
             to={link.url}
             activeClassName="active"
           >
