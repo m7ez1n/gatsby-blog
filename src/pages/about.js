@@ -4,6 +4,16 @@ import Layout from "../components/Layout"
 import SEO from "../components/seo"
 
 import { MainContent } from "../styles/base"
+import {
+  Html5,
+  Css3,
+  ReactLogo,
+  Javascript,
+  Nodejs,
+  Git,
+} from "styled-icons/boxicons-logos"
+import { Database } from "styled-icons/fa-solid"
+import { Java } from "styled-icons/fa-brands"
 import SocialLinks from "../components/SocialLinks"
 
 const AboutPage = () => (
@@ -40,14 +50,38 @@ const AboutPage = () => (
       <h2>Habilidades</h2>
 
       <ul>
-        <li>HTML</li>
-        <li>CSS (Style Components, Sass)</li>
-        <li>Javascript</li>
-        <li>ReactJS / Redux / Flux</li>
-        <li>NodeJS</li>
-        <li>Git</li>
-        <li>MySQL - MongoDB - Postgres</li>
-        <li>Java</li>
+        <li>
+          {" "}
+          <Html5 size={24} /> HTML
+        </li>
+        <li>
+          {" "}
+          <Css3 size={24} /> CSS (Style Components, Sass)
+        </li>
+        <li>
+          {" "}
+          <Javascript size={24} /> Javascript
+        </li>
+        <li>
+          {" "}
+          <ReactLogo size={24} /> ReactJS / Redux / Flux
+        </li>
+        <li>
+          {" "}
+          <Nodejs size={24} /> NodeJS
+        </li>
+        <li>
+          {" "}
+          <Git size={24} /> Git
+        </li>
+        <li>
+          {" "}
+          <Database size={24} /> MySQL - MongoDB - Postgres
+        </li>
+        <li>
+          {" "}
+          <Java size={24} /> Java
+        </li>
         <li>
           Quero melhorar meus conhecimentos nessas tecnologias antes de ir para
           outras!
