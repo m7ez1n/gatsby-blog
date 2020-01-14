@@ -38,7 +38,7 @@ export const MainContent = styled.section`
   h3,
   h4,
   h5 {
-    margin: 2.4rem auto 1rem;
+    margin: 2.2rem auto 1rem;
   }
   ul,
   ol {
