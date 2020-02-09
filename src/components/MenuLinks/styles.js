@@ -18,6 +18,7 @@ export const MenuLinksItem = styled.li`
 
   .active {
     color: var(--highlight);
+    border-bottom: 1px solid var(--highlight);
   }
 `
 
@@ -28,5 +29,6 @@ export const MenuLinksLink = styled(AniLink)`
 
   &:hover {
     color: var(--highlight);
+    border-bottom: 1px solid var(--highlight);
   }
 `
